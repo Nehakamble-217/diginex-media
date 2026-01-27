@@ -1,0 +1,149 @@
+/* SECTION */
+.about-section {
+  padding: 80px 60px;
+  background: #ffffff;
+  position: relative;
+}
+
+/* LAYOUT */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+}
+
+/* LEFT AREA */
+.target-area {
+  position: relative;
+  width: 520px;     /* wide so arrow goes THROUGH text */
+  height: 220px;
+}
+
+/* ARROW LINE */
+.arrow-line {
+  position: absolute;
+  top: 110px;
+  left: -220px;     /* starts from behind paragraph */
+  height: 2px;
+  width: 0;
+  background: linear-gradient(
+    to right,
+    rgba(75, 195, 135, 1),
+    rgba(75, 195, 135, 0.15)
+  );
+  z-index: 1;       /* behind text */
+  animation: drawLine 4.5s ease-in-out infinite;
+}
+
+/* ARROW HEAD */
+.arrow-head {
+  position: absolute;
+  top: 101px;
+  left: -220px;
+  font-size: 20px;
+  color: #4BC387;
+  opacity: 0;
+  z-index: 2;
+  animation: arrowMove 4.5s ease-in-out infinite;
+}
+
+/* TARGET */
+.target {
+  position: absolute;
+  right: 140px;     /* target BEFORE paragraph */
+  top: 40px;
+  width: 140px;
+  height: 140px;
+  z-index: 3;
+}
+
+/* TARGET RINGS */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.3px solid #4BC387;
+  opacity: 0.8;
+}
+
+.ring-outer {
+  width: 140px;
+  height: 140px;
+}
+
+.ring-inner {
+  width: 90px;
+  height: 90px;
+  top: 25px;
+  left: 25px;
+}
+
+/* BULLSEYE */
+.bullseye {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #4BC387;
+  border-radius: 50%;
+  top: 64px;
+  left: 64px;
+  z-index: 4;
+}
+
+/* RIGHT CONTENT ABOVE ARROW */
+.about-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 5;  /* text above arrow */
+  font-size: 20px;
+  
+}
+
+/* LINE ANIMATION – CROSSES TARGET */
+@keyframes drawLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  65% {
+    width: 520px;   /* goes THROUGH bullseye */
+    opacity: 1;
+  }
+  100% {
+    width: 520px;
+    opacity: 0;
+  }
+}
+
+/* ARROW ANIMATION – CROSSES TARGET */
+@keyframes arrowMove {
+  0% {
+    left: -220px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  65% {
+    left: 360px;   /* crosses bullseye */
+    opacity: 1;
+  }
+  100% {
+    left: 360px;
+    opacity: 0;    /* fades after crossing */
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .target-area {
+    margin-bottom: 40px;
+  }
+}

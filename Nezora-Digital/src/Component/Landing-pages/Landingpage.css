@@ -1,0 +1,447 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background: #4BC387;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  font-size: 14px;
+  z-index: 1100;
+}
+
+.top-bar-left {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+}
+
+.social-icons-landing {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icons-landing a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* Call & Email container */
+.top-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon circle – SAME as social */
+.top-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+/* Text */
+.top-text {
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+/* Hover effect */
+.top-icon-item:hover .top-icon {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+
+.social-icons-landing a:hover {
+  background: #ffffff;
+  color: #0f172a;
+}
+.main {
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  height: 72px;
+  padding: 0 40px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  padding-bottom: 6px; 
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  
+}
+
+.L-img img {
+  height: 65px;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  
+
+}
+
+.nav span{
+  cursor: pointer;
+}
+
+/* ================= HAMBURGER MENU ================= */
+
+.hamburger {
+  display: none; /* desktop hidden */
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background-color: #0f172a;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* OPEN STATE */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.primary-btn-nav {
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: none;
+  background: #4BC387;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn-nav:hover {
+  background: #3aa96f;
+  box-shadow: 0 6px 18px rgba(75,195,135,0.4);
+}
+
+.hero {
+  min-height: 100vh;
+  padding-top: 200px; /* top-bar + navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: visible; 
+  z-index: 1;
+}
+
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  pointer-events: none; 
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  transform: translateY(60px);
+}
+/* CTA WRAPPER */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Remove anchor default style */
+.hero-cta a {
+  text-decoration: none;
+}
+
+/* COMMON BUTTON BASE */
+.secondary-btn {
+ 
+  padding: 11px 22px;   /* ⬅️ reduced from 14px 32px */
+  border-radius: 26px;  /* slightly smaller curve */
+  font-size: 14px;      /* reduced from 15–16px */
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+.primary-btn{
+
+   padding: 14px 48px;   /* ⬅️ reduced from 14px 32px */
+  border-radius: 26px;  /* slightly smaller curve */
+  font-size: 14px;      /* reduced from 15–16px */
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* PRIMARY BUTTON */
+.primary-btn {
+  background: #4BC387;
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background: #3aa96f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(75, 195, 135, 0.45);
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.secondary-btn:hover {
+  background: #ffffff;
+  color: #111;
+}
+.who-section {
+  padding: 80px 60px;
+  background: linear-gradient(86deg, #2ad47c 0%, #fcf5f5 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.who-container {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  gap: 60px;
+}
+.who-highlight {
+  flex: 1;
+  position: sticky;
+  top: 120px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 32px;
+  border-radius: 16px;
+  border-left: 4px solid #4BC387;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.who-content{
+  flex: 2;
+}
+
+/* WHO TITLE */
+.who-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+/* Each character */
+.jump-text span {
+  display: inline-block;
+  opacity: 0;
+  animation: charDropBounce 0.7s ease forwards;
+}
+
+/* TOP → DOWN bounce animation */
+@keyframes charDropBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px); /* 👈 start from top */
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(6px);   /* 👈 slight overshoot */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);     /* 👈 settle */
+  }
+}
+
+/* Hover micro-interaction */
+.jump-text span:hover {
+  animation: hoverBounce 0.4s ease;
+  color: #000000;
+}
+
+@keyframes hoverBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(6px); } /* down bounce on hover */
+  100% { transform: translateY(0); }
+}
+
+
+.animate-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+ 
+}
+
+.animate-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #0f172a;
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* green bullet */
+.animate-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 24px;
+  color: #4BC387;
+}
+
+/* stagger animation */
+.animate-list li:nth-child(1) { animation-delay: 0.2s; }
+.animate-list li:nth-child(2) { animation-delay: 0.4s; }
+.animate-list li:nth-child(3) { animation-delay: 0.6s; }
+.animate-list li:nth-child(4) { animation-delay: 0.8s; }
+.animate-list li:nth-child(5) { animation-delay: 1s; }
+
+/* hover micro interaction */
+.animate-list li:hover {
+  color: #4BC387;
+  transform: translateX(4px);
+  transition: all 0.3s ease;
+}
+
+/* animation keyframe */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .top-bar {
+    display: none;
+  }
+
+  .main {
+    top: 0;
+  }
+
+  .hero {
+    padding-top: 130px;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    right: 20px;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  
+
+   .hero-cta {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 220px;
+    text-align: center;
+  }
+
+  .who-container {
+    flex-direction: column;
+    position: static;
+    margin-top: 40px;
+  }
+ 
+  .hamburger {
+    display: flex; /* 👈 NOW IT WILL SHOW */
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 72px; /* navbar height */
+    right: 20px;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+}
