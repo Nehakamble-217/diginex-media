@@ -7,32 +7,17 @@ function Contactus({ innerRef }) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const sendEmail = (e) => {
+const sendEmail = (e) => {
   e.preventDefault();
-
   setLoading(true);
   setError("");
 
   const serviceid = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const adminTemplateId = import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE;
-  const autoReplyTemplateId =
-    import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE;
   const publickey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-  // 1️⃣ ADMIN MAIL
   emailjs
     .sendForm(serviceid, adminTemplateId, e.target, publickey)
-
-    // 2️⃣ AUTO-REPLY MAIL
-    .then(() => {
-      return emailjs.sendForm(
-        serviceid,
-        autoReplyTemplateId,
-        e.target,
-        publickey
-      );
-    })
-
     .then(() => {
       setLoading(false);
       setSuccess(true);
@@ -43,13 +28,13 @@ function Contactus({ innerRef }) {
           "https://wa.me/917775004428?text=Hello%20DigiNex%20Media,%20I%20have%20an%20enquiry.";
       }, 2000);
     })
-
     .catch((err) => {
-      console.error("EmailJS Error:", err);
+      console.error(err);
       setLoading(false);
       setError("Something went wrong. Please try again.");
     });
 };
+
 
 
   return (
